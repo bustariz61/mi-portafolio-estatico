@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Portafolio Full Stack de Brayan Ustariz - Experto en Laravel, React, PHP y SQL. Soluciones tecnológicas escalables y eficientes.">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Brayan Ustariz · Full Stack Developer">
+    <meta property="og:description" content="Full Stack Developer especializado en Laravel, React, PHP y SQL Server. Construyo soluciones escalables que transforman ideas en productos digitales.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brayan-ustariz.github.io">
+
+    <title>Brayan Ustariz · Full Stack Developer</title>
+
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- =============================================
+         NAVBAR — Glassmorphism
+         ============================================= -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav py-3" role="navigation" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#hero" aria-label="Inicio">
+                Brayan<span class="text-primary">Ustariz</span>
+            </a>
+            <div class="d-flex align-items-center gap-2">
+                <div class="dark-toggle me-1" id="darkModeToggle" aria-label="Cambiar modo oscuro" role="button" tabindex="0">
+                    <i class="fas fa-moon" id="darkIcon"></i>
+                </div>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-1">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#hero">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#about">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#skills">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#projects">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#experience">Trayectoria</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#curriculum">Currículum</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =============================================
+         HERO SECTION
+         ============================================= -->
+    <section id="hero" class="hero-gradient min-vh-100 d-flex align-items-center pt-5" aria-label="Presentación">
+        <!-- Partículas -->
+        <div class="hero-particles" aria-hidden="true"></div>
+
+        <div class="container text-white py-5 position-relative" data-aos="fade-up">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8 text-center">
+
+                    <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+                        <i class="fas fa-code"></i>
+                        Full Stack Developer · Soluciones a medida
+                    </div>
+
+                    <h1 class="display-4 fw-bold mb-4 lh-sm" data-aos="fade-up" data-aos-delay="150">
+                        Construyo
+                        <span class="hero-title-gradient"> soluciones escalables</span><br>
+                        que transforman ideas en<br>productos digitales
+                    </h1>
+
+                    <p class="lead mb-4 opacity-90" data-aos="fade-up" data-aos-delay="200">
+                        Optimizo bases de datos, arquitecturas limpias en <strong>Laravel</strong>
+                        y experiencias reactivas con <strong>React / JS</strong>.
+                        Reduzco tiempos de carga y garantizo seguridad.
+                    </p>
+
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="250">
+                        <a href="#projects" class="btn btn-primary btn-lg px-5 btn-glow" id="heroProjectsBtn">
+                            Ver proyectos <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-4" id="heroContactBtn">
+                            Conversemos <i class="fas fa-comment ms-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="tech-stack mt-5 pt-3" data-aos="fade-up" data-aos-delay="300">
+                        <span class="tech-chip"><i class="fab fa-laravel"></i> Laravel 12</span>
+                        <span class="tech-chip"><i class="fab fa-react"></i> React</span>
+                        <span class="tech-chip"><i class="fab fa-php"></i> PHP 8+</span>
+                        <span class="tech-chip"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="tech-chip"><i class="fas fa-database"></i> SQL Server</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         ESTADÍSTICAS / COUNTERS
+         ============================================= -->
+    <section class="stats-section" aria-label="Estadísticas">
+        <div class="container position-relative">
+            <div class="row g-0 text-white justify-content-center">
+
+                <div class="col-6 col-md-3">
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="50">
+                        <i class="fas fa-laptop-code stat-icon"></i>
+                        <span class="stat-number" data-target="25" data-suffix="+">0</span>
+                        <span class="stat-label">Proyectos completados</span>
+                    </div>
+                </div>
+
+                <div class="col-md-auto d-none d-md-block">
+                    <div class="stat-divider h-100"></div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-calendar-check stat-icon"></i>
+                        <span class="stat-number" data-target="3" data-suffix="+ años">0</span>
+                        <span class="stat-label">De experiencia</span>
+                    </div>
+                </div>
+
+                <div class="col-md-auto d-none d-md-block">
+                    <div class="stat-divider h-100"></div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fas fa-tachometer-alt stat-icon"></i>
+                        <span class="stat-number" data-target="40" data-suffix="%">0</span>
+                        <span class="stat-label">Reducción en tiempos SQL</span>
+                    </div>
+                </div>
+
+                <div class="col-md-auto d-none d-md-block">
+                    <div class="stat-divider h-100"></div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-smile-beam stat-icon"></i>
+                        <span class="stat-number" data-target="100" data-suffix="%">0</span>
+                        <span class="stat-label">Clientes satisfechos</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         SOBRE MÍ
+         ============================================= -->
+    <section id="about" class="about-section py-5" aria-label="Sobre Mí">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Avatar -->
+                <div class="col-lg-5 text-center" data-aos="fade-right">
+                    <div class="about-img-wrapper d-inline-block">
+                        <div class="about-avatar-placeholder">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texto -->
+                <div class="col-lg-7" data-aos="fade-left">
+                    <span class="section-tag">👋 Sobre Mí</span>
+                    <h2 class="fw-bold mb-3">Desarrollador Full Stack<br>
+                        <span class="text-primary">apasionado por el código limpio</span>
+                    </h2>
+
+                    <div class="about-badge mb-3">Disponible para proyectos</div>
+
+                    <p class="mb-3" style="line-height: 1.85;">
+                        Soy <strong>Brayan Ustariz</strong>, desarrollador Full Stack con más de 3 años de experiencia
+                        construyendo aplicaciones web robustas. Me especializo en <strong>Laravel</strong>, <strong>React</strong>
+                        y <strong>SQL Server</strong>, con un enfoque fuerte en rendimiento, seguridad y arquitectura limpia.
+                    </p>
+                    <p class="mb-4" style="line-height: 1.85;">
+                        Disfruto resolver problemas complejos: desde optimizar consultas que tardan segundos hasta diseñar
+                        sistemas de autorización granulares. Cada proyecto es una oportunidad para aprender y mejorar.
+                    </p>
+
+                    <!-- Skill bars -->
+                    <div class="mb-2">
+                        <div class="skill-bar-wrapper" id="skill-laravel">
+                            <div class="skill-bar-label">
+                                <span><i class="fab fa-laravel me-2 text-primary"></i>Laravel / PHP</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-wrapper" id="skill-react">
+                            <div class="skill-bar-label">
+                                <span><i class="fab fa-react me-2 text-primary"></i>React / JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-wrapper" id="skill-sql">
+                            <div class="skill-bar-label">
+                                <span><i class="fas fa-database me-2 text-primary"></i>SQL Server / MySQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#projects" class="btn btn-primary px-4 btn-glow" id="aboutProjectsBtn">
+                            <i class="fas fa-folder-open me-2"></i>Ver proyectos
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary px-4" id="aboutContactBtn">
+                            <i class="fas fa-envelope me-2"></i>Contáctame
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         STACK TECNOLÓGICO
+         ============================================= -->
+    <section id="skills" class="py-5 bg-light" aria-label="Stack tecnológico">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">⚡ Habilidades</span>
+                <h2 class="fw-bold">Dominio técnico <span class="text-primary">avanzado</span></h2>
+                <p class="text-muted">Herramientas que uso para construir con calidad y rendimiento</p>
+            </div>
+
+            <div class="tech-stack justify-content-center mb-5" data-aos="fade-up" data-aos-delay="50">
+                <div class="tech-chip"><i class="fab fa-laravel fa-fw"></i> Laravel (Eloquent, Queues, Policies)</div>
+                <div class="tech-chip"><i class="fab fa-react fa-fw"></i> React + Hooks / Context</div>
+                <div class="tech-chip"><i class="fab fa-php fa-fw"></i> PHP 8+</div>
+                <div class="tech-chip"><i class="fab fa-js fa-fw"></i> JavaScript ES6+</div>
+                <div class="tech-chip"><i class="fas fa-database fa-fw"></i> SQL Server / MySQL</div>
+                <div class="tech-chip"><i class="fab fa-bootstrap fa-fw"></i> Bootstrap 5</div>
+                <div class="tech-chip"><i class="fab fa-git-alt fa-fw"></i> Git / GitHub Actions</div>
+                <div class="tech-chip"><i class="fas fa-wind fa-fw"></i> Vite</div>
+            </div>
+
+            <!-- Logros técnicos -->
+            <div class="row g-4 mt-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-6 col-lg-4">
+                    <div class="achievement-badge h-100">
+                        <i class="fas fa-tachometer-alt fa-2x text-primary mb-3"></i>
+                        <h5 class="fw-semibold">Optimización SQL</h5>
+                        <p class="small mb-0 text-muted">Reducción del 40% en tiempos de consulta mediante índices estratégicos, eager loading y cursor pagination.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="achievement-badge h-100">
+                        <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
+                        <h5 class="fw-semibold">Seguridad con Gates/Policies</h5>
+                        <p class="small mb-0 text-muted">Implementación de roles y permisos granulares en Laravel, garantizando autorización robusta y auditable.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="achievement-badge h-100">
+                        <i class="fas fa-code-branch fa-2x text-primary mb-3"></i>
+                        <h5 class="fw-semibold">Clean Architecture</h5>
+                        <p class="small mb-0 text-muted">Código mantenible con patrones Repository y DTOs, integración continua con GitHub Actions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         PROYECTOS DESTACADOS
+         ============================================= -->
+    <section id="projects" class="py-5" aria-label="Proyectos">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">🚀 Proyectos</span>
+                <h2 class="fw-bold">Casos de estudio <span class="text-primary">Full Stack</span></h2>
+                <p class="text-muted">Arquitectura, retos reales y resultados medibles</p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Proyecto 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card h-100 d-flex flex-column">
+                        <div class="project-img-container">
+                            <img src="img/proyecto1.jpg" class="mockup-img" alt="CRM Analytics Dashboard" loading="lazy">
+                            <div class="project-img-overlay">
+                                <span class="badge bg-primary">CRM Analytics</span>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="fw-bold">CRM Analytics</h4>
+                            <p class="text-muted small mb-2"><i class="fab fa-laravel"></i> Laravel · React · SQL Server</p>
+                            <div class="mb-3 small">
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-1">Reto:</span>
+                                Alto volumen de datos + tiempo de respuesta lento.
+                                <br>
+                                <span class="badge bg-success bg-opacity-10 text-success mt-1">Solución:</span>
+                                Caché Redis, consultas optimizadas y cursor pagination.
+                            </div>
+                            <div class="mt-auto d-flex gap-2 pt-3 flex-wrap">
+                                <a href="#" class="btn btn-sm btn-outline-primary" id="proj1Demo">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary" id="proj1Code">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                            <div class="mt-2 small text-muted">🔍 Query Scopes + eliminación de N+1 queries.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card h-100 d-flex flex-column">
+                        <div class="project-img-container">
+                            <img src="img/proyecto2.jpg" class="mockup-img" alt="E-commerce Admin Panel" loading="lazy">
+                            <div class="project-img-overlay">
+                                <span class="badge bg-primary">E-commerce Admin</span>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="fw-bold">E-commerce Admin</h4>
+                            <p class="text-muted small mb-2"><i class="fab fa-react"></i> React · Laravel API · JWT</p>
+                            <div class="mb-3 small">
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-1">Reto:</span>
+                                Estado complejo y autenticación en tiempo real.
+                                <br>
+                                <span class="badge bg-success bg-opacity-10 text-success mt-1">Solución:</span>
+                                Context API + Laravel Sanctum y políticas de recursos.
+                            </div>
+                            <div class="mt-auto d-flex gap-2 pt-3 flex-wrap">
+                                <a href="#" class="btn btn-sm btn-outline-primary" id="proj2Demo">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary" id="proj2Code">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                            <div class="mt-2 small text-muted">⚙️ Lazy loading y memoización de componentes críticos.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card h-100 d-flex flex-column">
+                        <div class="project-img-container">
+                            <img src="img/proyecto3.jpg" class="mockup-img" alt="Sistema de Inventario" loading="lazy">
+                            <div class="project-img-overlay">
+                                <span class="badge bg-primary">Sistema de Inventario</span>
+                            </div>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <h4 class="fw-bold">Sistema de Inventario</h4>
+                            <p class="text-muted small mb-2"><i class="fas fa-database"></i> SQL Server · PHP · Laravel</p>
+                            <div class="mb-3 small">
+                                <span class="badge bg-primary bg-opacity-10 text-primary me-1">Reto:</span>
+                                Consistencia transaccional y deadlocks.
+                                <br>
+                                <span class="badge bg-success bg-opacity-10 text-success mt-1">Solución:</span>
+                                Transacciones explícitas, índices y stored procedures.
+                            </div>
+                            <div class="mt-auto d-flex gap-2 pt-3 flex-wrap">
+                                <a href="#" class="btn btn-sm btn-outline-primary" id="proj3Demo">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                                <a href="#" class="btn btn-sm btn-outline-secondary" id="proj3Code">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                            </div>
+                            <div class="mt-2 small text-muted">📊 Reducción del 35% en locks concurrentes.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         EXPERIENCIA Y EDUCACIÓN
+         ============================================= -->
+    <section id="experience" class="py-5 bg-light" aria-label="Trayectoria profesional">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">🗺️ Trayectoria</span>
+                <h2 class="fw-bold">Trayectoria profesional <span class="text-primary">&amp; formación</span></h2>
+                <p class="text-muted">Evolución, logros y compromiso técnico</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h5 class="fw-bold text-primary mb-4"><i class="fas fa-briefcase me-2"></i>Experiencia</h5>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h5 class="fw-bold">Desarrollador Full Stack</h5>
+                            <p class="text-primary mb-1 small fw-semibold">2024 - Actualidad · TechSolutions</p>
+                            <p class="text-muted small">Desarrollo de módulos financieros con Laravel + React. Implementación de reportes en SQL Server reduciendo latencia en un 30%.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h5 class="fw-bold">Junior Backend Laravel</h5>
+                            <p class="text-primary mb-1 small fw-semibold">2022 - 2024 · Innovatech</p>
+                            <p class="text-muted small">Diseño de API RESTful, sistema de roles con Policies y migraciones complejas. Optimización de consultas SQL con índices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h5 class="fw-bold text-primary mb-4"><i class="fas fa-graduation-cap me-2"></i>Formación</h5>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h5 class="fw-bold">Ingeniería en Sistemas</h5>
+                            <p class="text-primary mb-1 small fw-semibold">Universidad Tecnológica · 2026</p>
+                            <p class="text-muted small">Especialización en arquitectura de software y bases de datos. Proyectos con enfoque en performance y escalabilidad.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <h5 class="fw-bold">Certificación Laravel &amp; SQL Server</h5>
+                            <p class="text-primary mb-1 small fw-semibold">Microsoft / Laracasts</p>
+                            <p class="text-muted small">Buenas prácticas, optimización de consultas avanzadas y seguridad en aplicaciones empresariales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Dashboard -->
+            <div class="mt-5 p-4 rounded-4 glass-nav text-center" data-aos="zoom-in">
+                <i class="fas fa-chalkboard-user fa-3x text-primary mb-3"></i>
+                <h4 class="fw-semibold">Demo de habilidades administrativas</h4>
+                <p class="mb-3 text-muted">Accede a un <strong>dashboard público</strong> que simula un CRUD con Laravel, validaciones y seguridad básica.</p>
+                <a href="#" class="btn btn-primary btn-glow" id="demoGuestBtn" target="_blank">
+                    <i class="fas fa-eye me-2"></i>Explorar demo "Guest CRUD"
+                </a>
+                <div class="small text-muted mt-2">Roles, políticas y gestión de datos en tiempo real.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         CURRÍCULUM
+         ============================================= -->
+    <section id="curriculum" class="py-5" aria-label="Currículum">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">📄 CV</span>
+                <h2 class="fw-bold">Descarga mi <span class="text-primary">Currículum</span></h2>
+                <p class="text-muted">Visualización del documento</p>
+            </div>
+
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-8">
+                    <div class="ratio ratio-16x9 mb-4 shadow-lg rounded-4 overflow-hidden">
+                        <iframe
+                            src="img/Curriculum.pdf"
+                            style="border:0;"
+                            title="Currículum Brayan Ustariz"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="text-center">
+                        <a href="img/Curriculum.pdf"
+                           class="btn btn-primary btn-lg btn-glow px-5"
+                           id="downloadCVBtn"
+                           download="Brayan_Ustariz_CV.pdf">
+                            <i class="fas fa-file-arrow-down me-2"></i>Descargar PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         CONTACTO — FormSubmit (sin backend)
+         ============================================= -->
+    <section id="contact" class="py-5 bg-light contact-section" aria-label="Contacto">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="fade-up">
+                <div class="col-lg-8 col-xl-7">
+
+                    <div class="text-center mb-5">
+                        <span class="section-tag">📬 Contacto</span>
+                        <h2 class="fw-bold">¿Listo para colaborar?</h2>
+                        <p class="text-muted">Cuéntame tu proyecto, responderé en menos de 24 horas.</p>
+                    </div>
+
+                    <!--
+                        FORMULARIO con FormSubmit.co
+                        ► Reemplaza TU_EMAIL con tu email real antes de subir a GitHub Pages
+                        ► La primera vez que se envíe, FormSubmit te pedirá confirmar tu email
+                    -->
+                    <form
+                        action="https://formsubmit.co/TU_EMAIL@gmail.com"
+                        method="POST"
+                        id="contactForm"
+                        class="row g-3">
+
+                        <!-- Configuración FormSubmit -->
+                        <input type="hidden" name="_next" value="https://TU_USUARIO.github.io/gracias.html">
+                        <input type="hidden" name="_subject" value="✉️ Nuevo mensaje desde tu portafolio">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none">
+
+                        <div class="col-md-6">
+                            <input type="text"
+                                   class="form-control form-control-custom"
+                                   id="name"
+                                   name="name"
+                                   placeholder="Nombre completo"
+                                   required
+                                   minlength="2"
+                                   maxlength="100">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email"
+                                   class="form-control form-control-custom"
+                                   id="email"
+                                   name="email"
+                                   placeholder="Correo profesional"
+                                   required
+                                   maxlength="150">
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control form-control-custom"
+                                      rows="5"
+                                      id="message"
+                                      name="message"
+                                      placeholder="¿En qué proyecto necesitas ayuda? (Performance, arquitectura, integración, etc.)"
+                                      required
+                                      minlength="20"
+                                      maxlength="2000"></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary btn-lg px-5 btn-glow" id="submitBtn">
+                                <i class="fas fa-paper-plane me-2"></i>Enviar mensaje
+                            </button>
+                        </div>
+                        <div id="formFeedback" class="col-12 mt-1"></div>
+                    </form>
+
+                    <!-- Redes sociales -->
+                    <div class="mt-5 d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="https://linkedin.com/in/brayan-ustariz" target="_blank" rel="noopener noreferrer"
+                           class="social-icon" aria-label="LinkedIn de Brayan Ustariz" id="linkedinLink">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="https://github.com/brayan-ustariz" target="_blank" rel="noopener noreferrer"
+                           class="social-icon" aria-label="GitHub de Brayan Ustariz" id="githubLink">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                        <a href="mailto:brayan@example.com"
+                           class="social-icon" aria-label="Email de Brayan Ustariz" id="emailLink">
+                            <i class="fas fa-envelope fa-lg"></i>
+                        </a>
+                        <a href="https://wa.me/57300000000" target="_blank" rel="noopener noreferrer"
+                           class="social-icon" aria-label="WhatsApp de Brayan Ustariz" id="whatsappLink">
+                            <i class="fab fa-whatsapp fa-lg"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer class="text-center py-4 mt-2">
+        <div class="container">
+            <p class="mb-1 opacity-75">
+                &copy; 2026 <strong>Brayan Ustariz</strong> — Construyendo soluciones full stack con integridad técnica.
+            </p>
+            <p class="small text-muted mb-0">
+                Hecho con <i class="fas fa-heart text-danger"></i> · Publicado en GitHub Pages
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
