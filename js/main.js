@@ -138,7 +138,7 @@ document.querySelectorAll('.skill-bar-wrapper').forEach(el => barObserver.observ
 function getGraciasUrl() {
     const currentUrl = new URL(window.location.href);
     const basePath = currentUrl.pathname.replace(/\/[^/]*$/, '/');
-    return `${currentUrl.origin}${basePath}gracias.html`;
+    return `${currentUrl.origin}${basePath}gracias`;
 }
 
 const contactForm = document.getElementById('contactForm');
