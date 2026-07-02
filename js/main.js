@@ -135,10 +135,21 @@ document.querySelectorAll('.skill-bar-wrapper').forEach(el => barObserver.observ
    El form se envía nativamente (action en el HTML).
    Este bloque solo hace validación antes de submit.
    ============================================= */
+function getGraciasUrl() {
+    const currentUrl = new URL(window.location.href);
+    const basePath = currentUrl.pathname.replace(/\/[^/]*$/, '/');
+    return `${currentUrl.origin}${basePath}gracias.html`;
+}
+
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
+        const nextInput = document.getElementById('formNextUrl');
+        if (nextInput) {
+            nextInput.value = getGraciasUrl();
+        }
+
         const name    = document.getElementById('name')?.value.trim()    || '';
         const email   = document.getElementById('email')?.value.trim()   || '';
         const message = document.getElementById('message')?.value.trim() || '';
@@ -230,4 +241,3 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-console.log('✅ Portafolio Brayan Ustariz — cargado correctamente');
