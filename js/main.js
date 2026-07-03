@@ -137,7 +137,17 @@ document.querySelectorAll('.skill-bar-wrapper').forEach(el => barObserver.observ
    ============================================= */
 function getGraciasUrl() {
     const currentUrl = new URL(window.location.href);
-    const basePath = currentUrl.pathname.replace(/\/[^/]*$/, '/');
+    let basePath = currentUrl.pathname;
+
+    if (!basePath.endsWith('/')) {
+        const lastSegment = basePath.substring(basePath.lastIndexOf('/') + 1);
+        if (lastSegment.includes('.')) {
+            basePath = basePath.substring(0, basePath.lastIndexOf('/') + 1);
+        } else {
+            basePath = `${basePath}/`;
+        }
+    }
+
     return `${currentUrl.origin}${basePath}gracias.html`;
 }
 
@@ -168,9 +178,9 @@ if (contactForm) {
             return;
         }
 
-        if (message.length < 20) {
+        if (message.length < 10) {
             e.preventDefault();
-            alert('✍️ El mensaje debe tener al menos 20 caracteres.');
+            alert('✍️ El mensaje debe tener al menos 10 caracteres.');
             return;
         }
 
