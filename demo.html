@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Demo CRUD - Brayan Ustariz</title>
+    
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --text-main: #1e293b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+        }
+        .navbar-custom {
+            background: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .glass-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+        .table-hover tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom py-3 mb-5">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-arrow-left me-2 text-primary"></i> Volver al Portafolio
+            </a>
+            <div class="d-flex align-items-center">
+                <span class="me-3 fw-semibold">Simular Rol:</span>
+                <select id="roleSelector" class="form-select form-select-sm w-auto shadow-sm">
+                    <option value="guest" selected>Guest (Invitado)</option>
+                    <option value="admin">Administrador</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+        <div class="container">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold">Gestión de Usuarios (Demo Frontend)</h2>
+                <p class="text-muted">Prueba agregar usuarios con validaciones y eliminar registros según el rol seleccionado.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="glass-card p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold mb-0">Directorio de Empleados</h5>
+                        <button class="btn btn-primary" onclick="openModal()">
+                            <i class="fas fa-plus me-2"></i> Nuevo Usuario
+                        </button>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Correo Electrónico</th>
+                                    <th>Departamento</th>
+                                    <th class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                                                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="modal fade" id="userModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title fw-bold" id="modalTitle">Agregar Nuevo Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="userForm" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nombre Completo</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Ej. Juan Pérez" required minlength="3">
+                            <div class="invalid-feedback">El nombre es requerido y debe tener al menos 3 caracteres.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="userEmail" placeholder="juan@ejemplo.com" required>
+                            <div class="invalid-feedback">Ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Departamento</label>
+                            <select class="form-select" id="userDept" required>
+                                <option value="" disabled selected>Selecciona un área...</option>
+                                <option value="IT">Tecnología (IT)</option>
+                                <option value="Ventas">Ventas</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="RRHH">Recursos Humanos</option>
+                            </select>
+                            <div class="invalid-feedback">Debes seleccionar un departamento.</div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary py-2 fw-semibold">Guardar Registro</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Data in-memory
+        let users = [
+            { id: 1, name: "María González", email: "maria.g@ejemplo.com", dept: "RRHH" },
+            { id: 2, name: "Carlos Mendoza", email: "cmendoza@ejemplo.com", dept: "IT" },
+            { id: 3, name: "Laura Sánchez", email: "laura.ventas@ejemplo.com", dept: "Ventas" }
+        ];
+
+        let idCounter = 4;
+        const userModal = new bootstrap.Modal(document.getElementById('userModal'));
+        const form = document.getElementById('userForm');
+
+        function renderTable() {
+            const tbody = document.getElementById('userTableBody');
+            tbody.innerHTML = '';
+            users.forEach(user => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><span class="badge bg-secondary">#${user.id}</span></td>
+                    <td class="fw-semibold">${user.name}</td>
+                    <td class="text-muted">${user.email}</td>
+                    <td><span class="badge bg-info text-dark bg-opacity-25">${user.dept}</span></td>
+                    <td class="text-end">
+                        <button class="btn btn-sm btn-outline-danger" onclick="deleteUser(${user.id})" title="Eliminar">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function checkPermissions(actionName) {
+            const role = document.getElementById('roleSelector').value;
+            if (role !== 'admin') {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Acceso Denegado',
+                    text: `No tienes permisos para ${actionName}. Se requiere rol de Administrador.`,
+                    confirmButtonColor: '#3b82f6'
+                });
+                return false;
+            }
+            return true;
+        }
+
+        function openModal() {
+            if(!checkPermissions('crear nuevos registros')) return;
+            form.reset();
+            form.classList.remove('was-validated');
+            userModal.show();
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                form.classList.add('was-validated');
+                return;
+            }
+
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const dept = document.getElementById('userDept').value;
+
+            users.push({ id: idCounter++, name, email, dept });
+            renderTable();
+            userModal.hide();
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Registro Exitoso',
+                text: 'El usuario ha sido agregado correctamente.',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+        });
+
+        function deleteUser(id) {
+            if(!checkPermissions('eliminar registros')) return;
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Esta acción no se puede deshacer.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    users = users.filter(u => u.id !== id);
+                    renderTable();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Eliminado',
+                        text: 'El registro fue eliminado.',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                }
+            });
+        }
+
+        // Initialize table
+        document.addEventListener('DOMContentLoaded', renderTable);
+    </script>
+</body>
+
+</html>
